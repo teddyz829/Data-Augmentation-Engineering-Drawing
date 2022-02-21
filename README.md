@@ -1,5 +1,5 @@
 # Data Augmentation of Engineering Drawings for Data-driven Component Segmentation
-Created by Wentai Zhang, Quan Chen, Can Koz, Liuyue Xie, Amit Regmi, Soji Yamakawa, Tomotake Furuhata, Kenji Shimada,Levent Burak Kara from Carnegie Mellon University.
+Created by Wentai Zhang, Quan Chen, Can Koz, Liuyue Xie, Amit Regmi, Soji Yamakawa, Tomotake Furuhata, Kenji Shimada, Levent Burak Kara from Carnegie Mellon University.
 
 ![teaser](teaser.png)
 
@@ -16,4 +16,14 @@ We present a new data generation method to facilitate an automatic machine inter
  pandas==0.25.3 
  python-dateutil==2.8.0 
  python-utils==2.3.0 
+ scikit-learn==1.0.2   
 ```
+
+### Usage
+1. Prepare part drawings in DXF format. Some sample drawings are provided in `/raw_data` folder. Note that the outer frames, symbols for geometric tolerances and surface roughness are not considered in the current scope of work. The layers need to follow the same style as the given examples.
+2. Open `dxfRunner.py`. The variable `num` controls the number of synthetic drawings generated from each given examples in `/raw_data`.
+3. Install all required dependencies. Run `dxfRunner.py` file until it shows `Draw File DONE!!! Copy File DONE!!!` in the command line.
+4. The synthesized dxf files are saved in a newly created folder named `generated_dxf`. The parameters in JSON format corresponding to each synthetic drawing are saved in `generated_json`.
+
+### Aknowledgement
+The authors would like to thank MiSUMi Corporation for their provision of a contemporary engineering problem, guidance on the applicability of developed methods, and financial support.
